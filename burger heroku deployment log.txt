@@ -1,0 +1,284 @@
+
+cmwii@DESKTOP-CVC7A82 MINGW64 /c/RUBootCamp/Burger (master)
+$ nodemon server.js
+[nodemon] 1.12.1
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching: *.*
+[nodemon] starting `node server.js`
+App listening on PORT 3000
+connected as id 4
+{ burgers:
+   [ RowDataPacket {
+       id: 1,
+       burger_name: 'Big Mac',
+       devoured: 0,
+       date: 2017-10-11T13:56:28.000Z },
+     RowDataPacket {
+       id: 2,
+       burger_name: 'Double Cheeseburger',
+       devoured: 0,
+       date: 2017-10-11T13:56:28.000Z },
+     RowDataPacket {
+       id: 3,
+       burger_name: 'Quarter Pounder',
+       devoured: 0,
+       date: 2017-10-11T13:56:28.000Z } ] }
+condition id = 1
+UPDATE burgers SET devoured=true WHERE id = 1
+{ burgers:
+   [ RowDataPacket {
+       id: 1,
+       burger_name: 'Big Mac',
+       devoured: 1,
+       date: 2017-10-11T13:56:28.000Z },
+     RowDataPacket {
+       id: 2,
+       burger_name: 'Double Cheeseburger',
+       devoured: 0,
+       date: 2017-10-11T13:56:28.000Z },
+     RowDataPacket {
+       id: 3,
+       burger_name: 'Quarter Pounder',
+       devoured: 0,
+       date: 2017-10-11T13:56:28.000Z } ] }
+INSERT INTO burgers (burger_name,devoured) VALUES (?,?)
+[ 'McChicken Sandwich', false ]
+{ burgers:
+   [ RowDataPacket {
+       id: 1,
+       burger_name: 'Big Mac',
+       devoured: 1,
+       date: 2017-10-11T13:56:28.000Z },
+     RowDataPacket {
+       id: 2,
+       burger_name: 'Double Cheeseburger',
+       devoured: 0,
+       date: 2017-10-11T13:56:28.000Z },
+     RowDataPacket {
+       id: 3,
+       burger_name: 'Quarter Pounder',
+       devoured: 0,
+       date: 2017-10-11T13:56:28.000Z },
+     RowDataPacket {
+       id: 4,
+       burger_name: 'McChicken Sandwich',
+       devoured: 0,
+       date: 2017-10-12T15:38:17.000Z } ] }
+{ burgers:
+   [ RowDataPacket {
+       id: 1,
+       burger_name: 'Big Mac',
+       devoured: 1,
+       date: 2017-10-11T13:56:28.000Z },
+     RowDataPacket {
+       id: 2,
+       burger_name: 'Double Cheeseburger',
+       devoured: 0,
+       date: 2017-10-11T13:56:28.000Z },
+     RowDataPacket {
+       id: 3,
+       burger_name: 'Quarter Pounder',
+       devoured: 0,
+       date: 2017-10-11T13:56:28.000Z },
+     RowDataPacket {
+       id: 4,
+       burger_name: 'McChicken Sandwich',
+       devoured: 0,
+       date: 2017-10-12T15:38:17.000Z } ] }
+
+cmwii@DESKTOP-CVC7A82 MINGW64 /c/RUBootCamp/Burger (master)
+$ git add .
+
+cmwii@DESKTOP-CVC7A82 MINGW64 /c/RUBootCamp/Burger (master)
+$ git commit -m "Final Burger App"
+[master 7686fe8] Final Burger App
+ 14 files changed, 397 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 config/connection.js
+ create mode 100644 config/orm.js
+ create mode 100644 controllers/burgers_controller.js
+ create mode 100644 db/schema.sql
+ create mode 100644 db/seeds.sql
+ create mode 100644 models/burger.js
+ create mode 100644 package.json
+ create mode 100644 public/assets/css/burger_style.css
+ create mode 100644 public/assets/img/burger.png
+ create mode 100644 server.js
+ create mode 100644 views/index.handlebars
+ create mode 100644 views/layouts/main.handlebars
+
+cmwii@DESKTOP-CVC7A82 MINGW64 /c/RUBootCamp/Burger (master)
+$ git remote -v
+origin  https://github.com/cmwiiius1/Burger.git (fetch)
+origin  https://github.com/cmwiiius1/Burger.git (push)
+
+cmwii@DESKTOP-CVC7A82 MINGW64 /c/RUBootCamp/Burger (master)
+$ heroku create
+  Terminate batch job (Y/N)? n
+
+cmwii@DESKTOP-CVC7A82 MINGW64 /c/RUBootCamp/Burger (master)
+$ git remote -v
+origin  https://github.com/cmwiiius1/Burger.git (fetch)
+origin  https://github.com/cmwiiius1/Burger.git (push)
+
+cmwii@DESKTOP-CVC7A82 MINGW64 /c/RUBootCamp/Burger (master)
+$ heroku create
+Creating app... done, boiling-peak-17551
+https://boiling-peak-17551.herokuapp.com/ | https://git.heroku.com/boiling-peak-17551.git
+
+cmwii@DESKTOP-CVC7A82 MINGW64 /c/RUBootCamp/Burger (master)
+$ git push heroku master
+Counting objects: 29, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (21/21), done.
+Writing objects: 100% (29/29), 31.93 KiB | 4.56 MiB/s, done.
+Total 29 (delta 1), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Node.js app detected
+remote:
+remote: -----> Creating runtime environment
+remote:
+remote:        NPM_CONFIG_LOGLEVEL=error
+remote:        NPM_CONFIG_PRODUCTION=true
+remote:        NODE_VERBOSE=false
+remote:        NODE_ENV=production
+remote:        NODE_MODULES_CACHE=true
+remote:
+remote: -----> Installing binaries
+remote:        engines.node (package.json):  unspecified
+remote:        engines.npm (package.json):   unspecified (use default)
+remote:
+remote:        Resolving node version 6.x...
+remote:        Downloading and installing node 6.11.4...
+remote:        Using default npm version: 3.10.10
+remote:
+remote: -----> Restoring cache
+remote:        Skipping cache restore (not-found)
+remote:
+remote: -----> Building dependencies
+remote:        Installing node modules (package.json)
+remote:        burger@1.0.0 /tmp/build_224d66c824bfb82084e6004db2d76223
+remote:        +-- body-parser@1.18.2
+remote:        ¦ +-- bytes@3.0.0
+remote:        ¦ +-- content-type@1.0.4
+remote:        ¦ +-- debug@2.6.9
+remote:        ¦ ¦ +-- ms@2.0.0
+remote:        ¦ +-- depd@1.1.1
+remote:        ¦ +-- http-errors@1.6.2
+remote:        ¦ ¦ +-- inherits@2.0.3
+remote:        ¦ ¦ +-- setprototypeof@1.0.3
+remote:        ¦ +-- iconv-lite@0.4.19
+remote:        ¦ +-- on-finished@2.3.0
+remote:        ¦ ¦ +-- ee-first@1.1.1
+remote:        ¦ +-- qs@6.5.1
+remote:        ¦ +-- raw-body@2.3.2
+remote:        ¦ ¦ +-- unpipe@1.0.0
+remote:        ¦ +-- type-is@1.6.15
+remote:        ¦   +-- media-typer@0.3.0
+remote:        ¦   +-- mime-types@2.1.17
+remote:        ¦     +-- mime-db@1.30.0
+remote:        +-- express@4.16.2
+remote:        ¦ +-- accepts@1.3.4
+remote:        ¦ ¦ +-- negotiator@0.6.1
+remote:        ¦ +-- array-flatten@1.1.1
+remote:        ¦ +-- content-disposition@0.5.2
+remote:        ¦ +-- cookie@0.3.1
+remote:        ¦ +-- cookie-signature@1.0.6
+remote:        ¦ +-- encodeurl@1.0.1
+remote:        ¦ +-- escape-html@1.0.3
+remote:        ¦ +-- etag@1.8.1
+remote:        ¦ +-- finalhandler@1.1.0
+remote:        ¦ +-- fresh@0.5.2
+remote:        ¦ +-- merge-descriptors@1.0.1
+remote:        ¦ +-- methods@1.1.2
+remote:        ¦ +-- parseurl@1.3.2
+remote:        ¦ +-- path-to-regexp@0.1.7
+remote:        ¦ +-- proxy-addr@2.0.2
+remote:        ¦ ¦ +-- forwarded@0.1.2
+remote:        ¦ ¦ +-- ipaddr.js@1.5.2
+remote:        ¦ +-- range-parser@1.2.0
+remote:        ¦ +-- safe-buffer@5.1.1
+remote:        ¦ +-- send@0.16.1
+remote:        ¦ ¦ +-- destroy@1.0.4
+remote:        ¦ ¦ +-- mime@1.4.1
+remote:        ¦ +-- serve-static@1.13.1
+remote:        ¦ +-- setprototypeof@1.1.0
+remote:        ¦ +-- statuses@1.3.1
+remote:        ¦ +-- utils-merge@1.0.1
+remote:        ¦ +-- vary@1.1.2
+remote:        +-- express-handlebars@3.0.0
+remote:        ¦ +-- glob@6.0.4
+remote:        ¦ ¦ +-- inflight@1.0.6
+remote:        ¦ ¦ ¦ +-- wrappy@1.0.2
+remote:        ¦ ¦ +-- minimatch@3.0.4
+remote:        ¦ ¦ ¦ +-- brace-expansion@1.1.8
+remote:        ¦ ¦ ¦   +-- balanced-match@1.0.0
+remote:        ¦ ¦ ¦   +-- concat-map@0.0.1
+remote:        ¦ ¦ +-- once@1.4.0
+remote:        ¦ ¦ +-- path-is-absolute@1.0.1
+remote:        ¦ +-- graceful-fs@4.1.11
+remote:        ¦ +-- handlebars@4.0.10
+remote:        ¦ ¦ +-- async@1.5.2
+remote:        ¦ ¦ +-- optimist@0.6.1
+remote:        ¦ ¦ ¦ +-- minimist@0.0.10
+remote:        ¦ ¦ ¦ +-- wordwrap@0.0.3
+remote:        ¦ ¦ +-- source-map@0.4.4
+remote:        ¦ ¦ ¦ +-- amdefine@1.0.1
+remote:        ¦ ¦ +-- uglify-js@2.8.29
+remote:        ¦ ¦   +-- source-map@0.5.7
+remote:        ¦ ¦   +-- uglify-to-browserify@1.0.2
+remote:        ¦ ¦   +-- yargs@3.10.0
+remote:        ¦ ¦     +-- camelcase@1.2.1
+remote:        ¦ ¦     +-- cliui@2.1.0
+remote:        ¦ ¦     ¦ +-- center-align@0.1.3
+remote:        ¦ ¦     ¦ ¦ +-- align-text@0.1.4
+remote:        ¦ ¦     ¦ ¦ ¦ +-- kind-of@3.2.2
+remote:        ¦ ¦     ¦ ¦ ¦ ¦ +-- is-buffer@1.1.5
+remote:        ¦ ¦     ¦ ¦ ¦ +-- longest@1.0.1
+remote:        ¦ ¦     ¦ ¦ ¦ +-- repeat-string@1.6.1
+remote:        ¦ ¦     ¦ ¦ +-- lazy-cache@1.0.4
+remote:        ¦ ¦     ¦ +-- right-align@0.1.3
+remote:        ¦ ¦     ¦ +-- wordwrap@0.0.2
+remote:        ¦ ¦     +-- decamelize@1.2.0
+remote:        ¦ ¦     +-- window-size@0.1.0
+remote:        ¦ +-- object.assign@4.0.4
+remote:        ¦ ¦ +-- define-properties@1.1.2
+remote:        ¦ ¦ ¦ +-- foreach@2.0.5
+remote:        ¦ ¦ +-- function-bind@1.1.1
+remote:        ¦ ¦ +-- object-keys@1.0.11
+remote:        ¦ +-- promise@7.3.1
+remote:        ¦   +-- asap@2.0.6
+remote:        +-- method-override@2.3.10
+remote:        +-- mysql@2.15.0
+remote:        +-- bignumber.js@4.0.4
+remote:        +-- readable-stream@2.3.3
+remote:        ¦ +-- core-util-is@1.0.2
+remote:        ¦ +-- isarray@1.0.0
+remote:        ¦ +-- process-nextick-args@1.0.7
+remote:        ¦ +-- string_decoder@1.0.3
+remote:        ¦ +-- util-deprecate@1.0.2
+remote:        +-- sqlstring@2.3.0
+remote:
+remote:
+remote: -----> Caching build
+remote:        Clearing previous node cache
+remote:        Saving 2 cacheDirectories (default):
+remote:        - node_modules
+remote:        - bower_components (nothing to cache)
+remote:
+remote: -----> Build succeeded!
+remote: -----> Discovering process types
+remote:        Procfile declares types     -> (none)
+remote:        Default types for buildpack -> web
+remote:
+remote: -----> Compressing...
+remote:        Done: 15.4M
+remote: -----> Launching...
+remote:        Released v3
+remote:        https://boiling-peak-17551.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy.... done.
+To https://git.heroku.com/boiling-peak-17551.git
+ * [new branch]      master -> master
